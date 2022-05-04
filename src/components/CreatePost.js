@@ -7,30 +7,30 @@ import "../App.css";
 const CreatePost = (props) => {
   const [posts, setPosts] = useState([]);
 
-  const [userInput, setUserInput] = useState("");
+  const [titleText, setTitleText] = useState("");
   const [postText, setPostText] = useState("");
 
-    const handleInputChange = (event) => {
-      // we're telling React to update the state of our `App` component to be
-      // equal to whatever is currently the value of the input field
-      setUserInput(event.target.value);
-    };
-    const handlePostChange = (event) => {
-      setPostText(event.target.value);
-    };
+  const handleInputChange = (event) => {
+    // we're telling React to update the state of our `App` component to be
+    // equal to whatever is currently the value of the input field
+    setTitleText(event.target.value);
+  };
+  const handlePostChange = (event) => {
+    setPostText(event.target.value);
+  };
 
-    const handleSubmit = (event) => {
-      // event.preventDefault prevents the default action (form submission and page refresh)
-      event.preventDefault();
-      // create a reference to our database
-      const database = getDatabase(firebase);
-      const dbRef = ref(database);
-      // push the value of the `userInput` state to the database
-      push(dbRef, { userInput, postText });
-      // reset the state to an empty string
-      setUserInput("");
-      setPostText("");
-    };
+  const handleSubmit = (event) => {
+    // event.preventDefault prevents the default action (form submission and page refresh)
+    event.preventDefault();
+    // create a reference to our database
+    const database = getDatabase(firebase);
+    const dbRef = ref(database);
+    // push the value of the `userInput` state to the database
+    push(dbRef, { titleText, postText });
+    // reset the state to an empty string
+    setTitleText("");
+    setPostText("");
+  };
 
   return (
     <div className="form">
@@ -40,7 +40,7 @@ const CreatePost = (props) => {
           type="text"
           id="newBook"
           onChange={handleInputChange}
-          value={userInput}
+          value={titleText}
         />
         <label htmlFor="newBook">Post</label>
         <textarea
