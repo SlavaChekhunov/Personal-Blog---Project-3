@@ -1,30 +1,21 @@
 //Modules
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import {
-  getDatabase,
-  ref,
-  onValue,
-  push,
-  remove,
-} from "firebase/database";
+
 //Config
-import firebase from "./firebase";
 import CreatePost from "./components/CreatePost";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import { signOut } from 'firebase/auth';
-import { auth, provider } from "./firebase";
+import { auth } from "./firebase";
+
 //styling
 import "./App.css";
 
 const App = () => {
-
   const [userAuth, setUserAuth] = useState(false);
-
   let navigate = useNavigate();
-
   const signUserOut = () => {
     signOut(auth)
     .then(() => {
@@ -33,7 +24,6 @@ const App = () => {
       navigate("/login")
     })
   }
-
 
   return (
     <div className="wrapper">
@@ -50,13 +40,11 @@ const App = () => {
           </li>
         </ul>
       </nav>
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<CreatePost />} />
         <Route path="/login" element={<Login setUserAuth={setUserAuth} />} />
       </Routes>
-     
     </div>
   );
 };

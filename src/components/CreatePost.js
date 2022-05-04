@@ -1,35 +1,30 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import firebase from "../firebase";
-import { getDatabase, ref, onValue, push, remove } from "firebase/database";
-import { Link, Routes, Route } from "react-router-dom";
+import { getDatabase, ref, push } from "firebase/database";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
-const CreatePost = (props) => {
-  const [posts, setPosts] = useState([]);
-
+const CreatePost = () => {
+  let navigate = useNavigate();
   const [titleText, setTitleText] = useState("");
   const [postText, setPostText] = useState("");
-
   const handleInputChange = (event) => {
-    // we're telling React to update the state of our `App` component to be
-    // equal to whatever is currently the value of the input field
     setTitleText(event.target.value);
   };
   const handlePostChange = (event) => {
     setPostText(event.target.value);
   };
-
   const handleSubmit = (event) => {
-    // event.preventDefault prevents the default action (form submission and page refresh)
     event.preventDefault();
     // create a reference to our database
     const database = getDatabase(firebase);
     const dbRef = ref(database);
-    // push the value of the `userInput` state to the database
+    // push the values of the state to the database
     push(dbRef, { titleText, postText });
     // reset the state to an empty string
     setTitleText("");
     setPostText("");
+    navigate("/");
   };
 
   return (
