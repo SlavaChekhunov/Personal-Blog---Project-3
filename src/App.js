@@ -1,25 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+//Modules
+import { useState } from "react";
+import { Link, Routes, Route } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-function App() {
+//Config
+import CreatePost from "./components/CreatePost";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import { signOut } from 'firebase/auth';
+import { auth } from "./firebase";
+
+//styling
+import "./App.css";
+
+const App = () => {
+  const [userAuth, setUserAuth] = useState(false);
+  let navigate = useNavigate();
+  const signUserOut = () => {
+    signOut(auth)
+    .then(() => {
+      localStorage.clear()
+      setUserAuth(false)
+      navigate("/login")
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/create">Create a post</Link>
+          </li>
+          <li>
+            {!userAuth ? <Link to="/login">Login</Link> : <button onClick={signUserOut}>Log Out</button>}
+          </li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create" element={<CreatePost />} />
+        <Route path="/login" element={<Login setUserAuth={setUserAuth} />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
