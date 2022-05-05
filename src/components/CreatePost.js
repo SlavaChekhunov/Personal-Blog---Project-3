@@ -8,20 +8,27 @@ const CreatePost = () => {
   let navigate = useNavigate();
   const [titleText, setTitleText] = useState("");
   const [postText, setPostText] = useState("");
+
+  const currentDate = new Date();
+  const postDate = currentDate.toLocaleString('default', {
+    weekday: 'short',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
   const handleInputChange = (event) => {
     setTitleText(event.target.value);
   };
+  
   const handlePostChange = (event) => {
     setPostText(event.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    // create a reference to our database
     const database = getDatabase(firebase);
     const dbRef = ref(database);
-    // push the values of the state to the database
-    push(dbRef, { titleText, postText });
-    // reset the state to an empty string
+    push(dbRef, {titleText: titleText, postText: postText, date: postDate});
     setTitleText("");
     setPostText("");
     navigate("/");
@@ -53,3 +60,4 @@ const CreatePost = () => {
 };
 
 export default CreatePost;
+
