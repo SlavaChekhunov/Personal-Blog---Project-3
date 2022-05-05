@@ -18,16 +18,17 @@ const Home = () => {
           key: key,
           title: data[key].titleText,
           description: data[key].postText,
+          date: data[key].date
         });
       }
-      setPosts(newState);
+      setPosts(newState.reverse());
     });
   }, []);
 
-  const handleRemoveTitle = (titleId) => {
+  const handleRemoveTitle = (postId) => {
     // here we create a reference to the database
     const database = getDatabase(firebase);
-    const dbRef = ref(database, `/${titleId}`);
+    const dbRef = ref(database, `/${postId}`);
     remove(dbRef);
   };
 
@@ -38,6 +39,7 @@ const Home = () => {
           return (
             <div key={post.key}>
               <h1>{post.title}</h1>
+              <p>{post.date} ☕📝</p>
               <p>{post.description}</p>
              <button onClick={() => handleRemoveTitle(post.key)}>
                 Remove

@@ -14,6 +14,7 @@ import { auth } from "./firebase";
 import "./App.css";
 
 const App = () => {
+
   const [userAuth, setUserAuth] = useState(false);
   let navigate = useNavigate();
   const signUserOut = () => {
