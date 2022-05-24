@@ -14,7 +14,7 @@ const Login = ({ setUserAuth }) => {
     }
     return (
       <div className="loginPage">
-        <p>Sign In with Google to create and edit your own Posts</p>
+        <p className="loginTag">Sign In with Google to create and edit your own Posts</p>
         <button className="google-btn" onClick={signInWithGoogle}>
         Sign In with Google
         </button>

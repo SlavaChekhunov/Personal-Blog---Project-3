@@ -41,7 +41,7 @@ const Home = ({userAuth}) => {
         {posts.map((post) => {
           return (
             <div key={post.key}>
-              <h1>{post.title}</h1>
+              <h2>{post.title}</h2>
               <p>{post.date} ☕📝</p>
               <p className="special">{post.description}</p>
               <p className='author'>Author: {post.name}</p>
