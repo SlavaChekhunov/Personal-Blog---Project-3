@@ -90,6 +90,7 @@ h1 {
 
 h2 {
   color: #d23669;
+  font-size: 2rem;
 }
 
 .loginPage {
@@ -166,8 +167,16 @@ label {
     padding: 0;
   }
   
+  ul {
+    margin-right: 100px;
+  }
+  
+  h1 {
+    margin-left: 90px;
+  }
+
   .profile {
-    justify-content: flex-start;
+    margin-right: 160px;
   }
   
 }
@@ -186,9 +195,22 @@ label {
     margin-right: 100px;
   }
 
+  .google-btn {
+    margin-right: 100px;
+  }
+
+  .loginTag {
+    margin-left:0;
+  }
+
 }
 
 @media (max-width: 400px) {
+
+  form {
+    width: 80%;
+    margin-left: 20px;
+  }
 
   h1 {
     margin-left: 20px;
@@ -200,6 +222,14 @@ label {
 
   .home {
     margin-right: 100px;
+  }
+
+  .google-btn {
+    font-size: 16px;
+  }
+  
+  .loginTag {
+    font-size: 12px;
   }
 
 }
