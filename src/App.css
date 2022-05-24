@@ -119,6 +119,29 @@ label {
     text-transform: uppercase;
   }
 
+@media (max-width: 750px) {
+  form {
+    width: 80%;
+    padding-top: 100px;
+  }
+
+  .posts {
+    padding: 0;
+  }
+
+
+  nav {
+    flex-direction: column;
+      align-items: flex-start;
+      display: none;
+
+  }
+
+ 
+    
+}
+
+
 
 .logOut {
   margin-left: 70px;
