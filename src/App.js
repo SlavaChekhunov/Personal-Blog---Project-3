@@ -14,8 +14,7 @@ import { auth } from "./firebase";
 import "./App.css";
 
 const App = () => {
-
-  const [userAuth, setUserAuth] = useState(false);
+  const [userAuth, setUserAuth] = useState(localStorage.getItem('userAuth'));
   let navigate = useNavigate();
   const signUserOut = () => {
     signOut(auth)
@@ -34,16 +33,20 @@ const App = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/create">Create a post</Link>
-          </li>
-          <li>
-            {!userAuth ? <Link to="/login">Login</Link> : <button onClick={signUserOut}>Log Out</button>}
+            {!userAuth ? (
+              <Link to="/login">Login</Link>
+            ) : (
+              <>
+              <Link to="/create">Create a post</Link>
+              <button className = "logOut" onClick={signUserOut}>Log Out</button>
+              </>
+            )}
           </li>
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/create" element={<CreatePost />} />
+        <Route path="/" element={<Home userAuth={userAuth} />}/>
+        <Route path="/create" element={<CreatePost userAuth={userAuth} />} />
         <Route path="/login" element={<Login setUserAuth={setUserAuth} />} />
       </Routes>
     </div>
