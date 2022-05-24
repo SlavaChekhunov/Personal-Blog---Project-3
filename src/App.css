@@ -12,7 +12,7 @@ nav {
 
 ul{
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   display: flex;
 }
 
@@ -21,9 +21,12 @@ ul{
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 90px;
+  padding-left: 150px;
 }
 
+.author {
+  font-weight: bold;
+}
 
 form {
   display: flex;
@@ -35,9 +38,6 @@ form {
 
 li {
   list-style-type: none;
-  padding-left: 50px;
-  padding-right: 50px;
-  
 }
 
 
@@ -106,6 +106,10 @@ textarea {
   margin-bottom: 40px;
   color: #333;
 }
+
+.special {
+  text-indent: 20px;
+}
   
 label {
     font-size: 0.8rem;
@@ -138,6 +142,29 @@ label {
 }
 
 
+
+.logOut {
+  margin-left: 70px;
+}  
+
+@media (max-width: 750px) {
+  form {
+    width: 80%;
+    padding-top: 100px;
+  }
+
+  .posts {
+    padding: 0;
+  }
+
+
+  nav {
+    flex-direction: column;
+      align-items: flex-start;
+      display: none;
+
+  }
+}
 
 
 

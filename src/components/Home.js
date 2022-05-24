@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import firebase from "../firebase";
 import { getDatabase, ref, onValue, remove } from "firebase/database";
+import { auth } from "../firebase";
 
-const Home = () => {
+const Home = ({userAuth}) => {
   const [posts, setPosts] = useState([]);
-
+  
   useEffect(() => {
     const database = getDatabase(firebase);
     const dbRef = ref(database);
@@ -18,7 +19,9 @@ const Home = () => {
           key: key,
           title: data[key].titleText,
           description: data[key].postText,
-          date: data[key].date
+          date: data[key].date,
+          name: data[key].name,
+          id: data[key].id
         });
       }
       setPosts(newState.reverse());
@@ -40,10 +43,13 @@ const Home = () => {
             <div key={post.key}>
               <h1>{post.title}</h1>
               <p>{post.date} ☕📝</p>
-              <p>{post.description}</p>
-             <button onClick={() => handleRemoveTitle(post.key)}>
-                Remove
+              <p className="special">{post.description}</p>
+              <p className='author'>Author: {post.name}</p>
+              {userAuth && post.id === auth.currentUser.uid && (
+              <button onClick={() => handleRemoveTitle(post.key)}>
+              Remove
               </button>
+              )}
             </div>
           );
         })}
