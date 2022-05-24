@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState} from "react";
 import firebase from "../firebase";
 import { getDatabase, ref, push } from "firebase/database";
 import { useNavigate } from "react-router-dom";
+import {auth} from '../firebase';
 import "../App.css";
 
 const CreatePost = () => {
@@ -28,7 +29,7 @@ const CreatePost = () => {
     event.preventDefault();
     const database = getDatabase(firebase);
     const dbRef = ref(database);
-    push(dbRef, {titleText: titleText, postText: postText, date: postDate});
+    push(dbRef, {titleText: titleText, postText: postText, date: postDate, name: auth.currentUser.displayName, id: auth.currentUser.uid});
     setTitleText("");
     setPostText("");
     navigate("/");
