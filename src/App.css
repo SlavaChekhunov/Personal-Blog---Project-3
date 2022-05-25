@@ -16,6 +16,13 @@ ul{
   display: flex;
 }
 
+.anchor {
+  font-size: 16px;
+  margin-left: 5px;
+  color:#d23669;
+  text-decoration: underline;
+}
+
 .posts {
   display: flex;
   justify-content: center;
@@ -31,7 +38,7 @@ ul{
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin-left: 55px;
   width: 100%;
   
 }
@@ -48,6 +55,21 @@ a {
 
 }
 
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 75px;
+}
+
+img {
+  height: 80px;
+  border-radius: 60px;
+  margin-right: 20px;
+}
+
+
+
 button {
   color: white;
   background-color: #084b6d;
@@ -61,9 +83,14 @@ button {
   transition: 0.3s;
 }
 
-
 h1 {
+  color: #084b6d;
+  margin-left: 185px;
+}
+
+h2 {
   color: #d23669;
+  font-size: 2rem;
 }
 
 .loginPage {
@@ -88,6 +115,12 @@ h1 {
   background-color: white;
   background-repeat: no-repeat;
   background-position: 12px 9px;
+  margin-left: 60px;
+}
+
+.loginTag {
+  margin-left: 60px;
+  
 }
 .google-btn:hover {
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.25);
@@ -156,14 +189,72 @@ label {
   .posts {
     padding: 0;
   }
-
-
-  nav {
-    flex-direction: column;
-      align-items: flex-start;
-      display: none;
-
+  
+  ul {
+    margin-right: 100px;
   }
+  
+  h1 {
+    margin-left: 90px;
+  }
+
+  .profile {
+    margin-right: 160px;
+  }
+  
+}
+
+@media (max-width: 500px) {
+
+  h1 {
+    margin-left: 20px;
+  }
+
+  .profile {
+    margin:0;
+  }
+
+  ul {
+    margin-right: 100px;
+  }
+
+  .google-btn {
+    margin-right: 100px;
+  }
+
+  .loginTag {
+    margin-left:0;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  form {
+    width: 80%;
+    margin-left: 20px;
+  }
+
+  h1 {
+    margin-left: 20px;
+  }
+
+  .profile {
+    margin-left: 20px;
+  }
+
+  .home {
+    margin-right: 100px;
+  }
+
+  .google-btn {
+    font-size: 16px;
+  }
+  
+  .loginTag {
+    font-size: 12px;
+  }
+
 }
 
 
