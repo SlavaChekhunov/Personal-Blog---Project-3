@@ -53,6 +53,7 @@ const CreatePost = () => {
           cols="20"
           onChange={handlePostChange}
           value={postText}
+          placeholder="Please login to create your own posts."
         ></textarea>
         <button onClick={handleSubmit}>Submit</button>
       </form>
