@@ -1,17 +1,16 @@
 //Modules
 import { useState } from "react";
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
+import { signOut } from 'firebase/auth';
+import { auth } from "./firebase";
 
 //Config
 import CreatePost from "./components/CreatePost";
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Login from "./components/Login";
-import { signOut } from 'firebase/auth';
-import { auth } from "./firebase";
 import profile from "./profile.jpg";
-
-// console.log(profile)
 
 //styling
 import "./App.css";
@@ -31,7 +30,7 @@ const App = () => {
   return (
     <div className="wrapper">
       <div className="header">
-        <h1>Oversimplified</h1>
+      <Navbar />
         <div className="profile">
           <div className="picture">
             <img src={profile} />
@@ -45,25 +44,6 @@ const App = () => {
           </p>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li className="home">
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            {!userAuth ? (
-              <Link to="/login">Login</Link>
-            ) : (
-              <>
-                <Link to="/create">Create a post</Link>
-                <button className="logOut" onClick={signUserOut}>
-                  Log Out
-                </button>
-              </>
-            )}
-          </li>
-        </ul>
-      </nav>
       <Routes>
         <Route path="/" element={<Home userAuth={userAuth} />} />
         <Route path="/create" element={<CreatePost userAuth={userAuth} />} />
