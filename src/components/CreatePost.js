@@ -25,6 +25,7 @@ const CreatePost = () => {
   const handlePostChange = (event) => {
     setPostText(event.target.value);
   };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     const database = getDatabase(firebase);
