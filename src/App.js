@@ -28,7 +28,7 @@ const App = () => {
             <a className= "anchor" href="https://www.linkedin.com/in/slava-chekhunov/">
               Slava Chekhunov.
             </a>
-            <br />I write about tech and put it on the internet.
+            <br />I explain tech concepts using analogies and examples from experience.
           </p>
         </div>
       </div>

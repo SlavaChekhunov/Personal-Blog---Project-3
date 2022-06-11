@@ -23,7 +23,7 @@ nav {
 }
 
 .menu-bars {
-  margin-left: 10rem;
+  margin-left: 300px;
   font-size: 2rem;
   background: none;
 }
@@ -113,7 +113,7 @@ span {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  padding-left: 150px;
+  /* padding-left: 150px; */
 }
 
 .author {
@@ -144,7 +144,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 75px;
+  /* margin-left: 75px; */
 }
 
 img {
@@ -170,7 +170,7 @@ button {
 
 h1 {
   color: #084b6d;
-  margin-left: 185px;
+  margin-left: 55px;
 }
 
 h2 {
