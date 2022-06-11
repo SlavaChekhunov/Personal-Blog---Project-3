@@ -14,23 +14,11 @@ export const SidebarData = [
     icon: <IoIcons.IoIosPaper />,
     className: "nav-text",
   },
-  
-];
-
-export const Login = [
-    {
-      title: "Login",
-      path: "/login",
-      icon: <AiIcons.AiOutlineLogin />,
-      className: "nav-text",
-    }
-]
-
-export const Logout = [
   {
-    title: "Logout",
-    path: "/",
-    icon: <AiIcons.AiOutlineLogout />,
+    title: "Login",
+    path: "/login",
+    icon: <AiIcons.AiOutlineLogin />,
     className: "nav-text",
-  },
+  }
+  
 ];
