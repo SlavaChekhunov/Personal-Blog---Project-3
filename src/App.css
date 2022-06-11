@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@700&display=swap');
-
-
-
 .wrapper {
   max-width: 700px;
   width: 90%;
@@ -15,7 +12,6 @@ nav {
 }
 
 .navbar {
-  /* background-color: #060b26; */
   height: 80%;
   display: flex;
   justify-content: flex-start;
@@ -57,10 +53,6 @@ nav {
    color: white;
 }
 
-/* .logOut {
-  color: white;
-} */
-
 .nav-text a {
   text-decoration: none;
   color: #f5f5f5;
@@ -95,12 +87,6 @@ span {
 }
 
 
-/* ul{
-  align-items: center;
-  justify-content: space-around;
-  display: flex;
-} */
-
 .anchor {
   font-size: 16px;
   margin-left: 5px;
@@ -113,7 +99,6 @@ span {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  /* padding-left: 150px; */
 }
 
 .author {
@@ -248,28 +233,11 @@ label {
     padding-top: 100px;
   }
 
-  .posts {
-    padding: 0;
-  }
-  
-  ul {
-    margin-right: 100px;
-  }
-  
-  h1 {
-    margin-left: 90px;
-  }
-
-  .profile {
-    margin-right: 160px;
-  }
-
   .menu-bars {
-  margin-left: 6rem;
+  margin-left: 8rem;
   font-size: 2rem;
   background: none;
 }
-
   
 }
 
@@ -301,10 +269,19 @@ label {
   background: none;
 }
 
+.nav-menu-items {
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  padding: 0;
+}
+
 
 }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
 
   form {
     width: 80%;
@@ -330,6 +307,10 @@ label {
   .loginTag {
     font-size: 12px;
   }
+
+  .menu-bars {
+  margin-left: 1.75rem;
+}
 
 }
 
