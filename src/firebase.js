@@ -2,12 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBtghzn_pZx1U5q9YpK5uebzeYCCYAYew0",
-  authDomain: "blog-24545.firebaseapp.com",
-  projectId: "blog-24545",
-  storageBucket: "blog-24545.appspot.com",
-  messagingSenderId: "954297140505",
-  appId: "1:954297140505:web:9e2c332a633f4689557188",
+  apiKey: "AIzaSyASdTqBx7FbbKWVAvCpm2ls82-wEJppVD4",
+  authDomain: "blognew-bdc55.firebaseapp.com",
+  databaseURL: "https://blognew-bdc55-default-rtdb.firebaseio.com",
+  projectId: "blognew-bdc55",
+  storageBucket: "blognew-bdc55.appspot.com",
+  messagingSenderId: "126290445031",
+  appId: "1:126290445031:web:89679cf23a0519e9b81842",
 };
 
 // Initialize Firebase

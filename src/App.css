@@ -251,11 +251,9 @@ label {
 }  
 
 @media (max-width: 750px) {
-
   nav {
      flex-direction: row;
   }
-  
   form {
     width: 80%;
     padding-top: 100px;
